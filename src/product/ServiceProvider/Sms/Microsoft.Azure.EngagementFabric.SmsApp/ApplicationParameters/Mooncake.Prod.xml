@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Name="fabric:/SmsApp" xmlns="http://schemas.microsoft.com/2011/01/fabric" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Parameters>
+    <!--SmsDispatcher-->
+    <Parameter Name="MessageDispatcher_PartitionCount" Value="10" />
+    <Parameter Name="MessageDispatcher_PartitionHighKey" Value="9" />
+    <Parameter Name="MessageDispatcher_MinReplicaSetSize" Value="1" />
+    <Parameter Name="MessageDispatcher_TargetReplicaSetSize" Value="1" />
+    <!--SmsProvider-->
+    <Parameter Name="SmsProvider_InstanceCount" Value="-1" />
+    <Parameter Name="SmsProvider_DefaultConnectionString" Value="Server=tcp:cefprodserver.database.chinacloudapi.cn,1433;Initial Catalog=cefprodssp;Persist Security Info=False;User ID=cefadmin;Password=Password123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+    <Parameter Name="SmsProvider_TelemetryStoreConnectionString" Value="DefaultEndpointsProtocol=https;AccountName=cefprodtelemetryssp;AccountKey=LG7vsVRsuP7NVROX3gLx580HvMrW4usYgdWKbqF4FwSUMGY61CpuNYTIs3jP2LAt3Hlq/bT1DaRu2iK8bo7iow==;EndpointSuffix=core.chinacloudapi.cn" />
+    <Parameter Name="SmsProvider_DispatchPartitions" Value="[Notification:0:2][Otp:3:5][Promotion:6:9]" />
+    <Parameter Name="SmsProvider_MdmAccount" Value="cefmdmprod" />
+    <Parameter Name="SmsProvider_MdmMetricNamespace" Value="SmsMetrics" />
+    <Parameter Name="SmsProvider_Cluster" Value="Prod" />
+    <Parameter Name="SmsProvider_SenderAddress" Value="cefops@microsoft.com" />
+    <Parameter Name="SmsProvider_SenderPassword" Value="0ps*fabr1c!" />
+    <Parameter Name="SmsProvider_ReceiverAddresses" Value="a-commerce@oe.21vianet.com" />
+    <Parameter Name="SmsProvider_MdmCertificateThumbprint" Value="24821136c1d9533a0d20adc0e2ce93b4f11e9fd6" />
+    <!--SmsMetaService-->
+    <Parameter Name="SmsMetaService_InstanceCount" Value="-1" />
+    <Parameter Name="SmsMetaService_DefaultConnectionString" Value="Server=tcp:cefprodserver.database.chinacloudapi.cn,1433;Initial Catalog=cefprodssp;Persist Security Info=False;User ID=cefadmin;Password=Password123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" />
+    <!--SmsDispatcher-->
+    <Parameter Name="SmsDispatcher_PartitionCount" Value="10" />
+    <Parameter Name="SmsDispatcher_PartitionHighKey" Value="9" />
+    <Parameter Name="SmsDispatcher_MinReplicaSetSize" Value="1" />
+    <Parameter Name="SmsDispatcher_TargetReplicaSetSize" Value="1" />
+  </Parameters>
+</Application>
